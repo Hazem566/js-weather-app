@@ -6,32 +6,63 @@
 }
 body {
     min-height: 100dvh;
-    display: grid;
-    place-items: center;
 }
 img {
     width: 100%;
     display: block;
 }
 #container {
-    width: 430px;
+    margin: 0 auto;
+    margin-top: clamp(2rem, 5vw + 4.75rem, 8rem);
+    width: min(93%, 480px);
     box-shadow: 4px 8px 15px 5px rgba(35,35,35,0.1);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1rem;
     height: min-content;
-    display: flex;
-    flex-direction: column;
     row-gap: .75rem;
+    display: flex;
+    justify-content: center;
 }
-.data__in {}
-.data__out {
-    display: none;
+.data__in {
+    position: relative;
+    display: flex;
+    column-gap: 0.3rem;
+    flex: 1;
 }
-.status {
-    display: none;
+.data__in > i {
+    position: absolute;
+    align-self: center;
+    font-size: 1.3rem;
+    transform: translateX(10px);
 }
-
-
+.data__in input {
+    font-size: 1.3rem;
+    padding: .4rem 0;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    border: 0;
+    background-color: rgb(240, 240, 240);
+    text-transform: capitalize;
+    flex:1;
+}
+.data__in input:focus {
+    outline: 1px solid black;
+}
+.data__in button {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 0;
+    transition: background 400ms ease, color 300ms ease;
+}
+.data__in button:hover {
+    color: #fff;
+    background-color: #333;
+}
+.data__in button i {
+    font-size: 1.2rem;
+}
 
 
 
