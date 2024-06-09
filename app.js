@@ -25,7 +25,7 @@ searchBtn.addEventListener("click", _ => {
 });
 
 function getData(city, key) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`)
     .then(response => response.json())
     .then(json => {
         if(json.cod === "404") {
