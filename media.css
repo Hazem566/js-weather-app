@@ -1,21 +1,14 @@
 
-@media only screen and (min-width: 500px){
-    #container { padding: 1.5rem; margin-top: 4rem}
-    .data__in input {
-        font-size: 1.7rem;
-        padding-left: 2.5rem;
-    }
-    .data__in i {
-        font-size: 1.6rem;
-    }
-    .data__in button {
-        width: 3rem;
-        height: 3rem;
-    }
-    .data__in button i { font-size: 1.7rem; }
-    .data__out .temp__box h1 { font-size: 4rem }
+
+@media only screen and (min-width: 400px) {
+    #search__box {font-size: 1.5rem;}
 }
-@media only screen and (max-width: 500px){
-    .details > div > i {display: none;}
-    .details > div > div {padding-left: .7rem;}
+@media only screen and (min-width: 475px) {
+    #search__box {font-size: 1.75rem; padding-left: 2.5rem;}
+    .data__in > i { font-size: 1.6rem; }
+    #search__btn {width: 3rem; height: 3rem;}
+    #search__btn i {font-size: 1.7rem;}
+    .details {flex-direction: row;}
+    .temp__box h1{font-size: 4rem;}
 }
+
