@@ -3,13 +3,12 @@ const searchBox = document.getElementById("search__box");
 const searchBtn = document.getElementById("search__btn");
 const dataOutEl = document.querySelector(".data__out");
 const img = document.querySelector(".temp__box img");
-const region = document.querySelector(".region");
 const tempEl = document.querySelector(".temp");
 const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
+const notFound = document.querySelector(".notFound");
 
 const apiKey = "3565a873aaa5923d283c487bcae50c55";
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=metric
 
 searchBox.addEventListener("keyup", e => {
     if(e.key === "Enter") {
@@ -27,14 +26,22 @@ searchBtn.addEventListener("click", _ => {
 
 function getData(city, key) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`)
-    .then(res => res.json())
-    .then(data => {
-        if(data.cod === "404") return;
-        getWeather(data);
-    });
+    .then(response => response.json())
+    .then(json => {
+        if(json.cod === "404") {
+            dataOutEl.style.display = "none";
+            dataOutEl.classList.remove("show__data");
+            notFound.style.display = "block";
+        } else {
+            notFound.style.display = "none";
+            getWeather(json);
+        }
+    })
 }
 
 function getWeather(data) {
+    dataOutEl.style.display = "block";
+    dataOutEl.classList.add("show__data");
     tempEl.innerText = parseFloat(data.main.temp).toFixed(1);
     const status = data.weather[0].main;
     humidity.innerText = data.main.humidity+"%";

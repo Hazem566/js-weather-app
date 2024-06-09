@@ -73,14 +73,13 @@ img {
 
 /* Data out */
 .data__out {
-    /* display: none; */
-    /* height: 0; */
+    display: none;
+    height: 0;
     transition: height 300ms ease;
     width: 100%;
     margin-top: 1.5rem;
 }
 .show__data {
-    display: block;
     height: min-content;
 }
 .temp__box h1 {
@@ -114,4 +113,12 @@ img {
     text-transform: capitalize;
     font-size: 1.2rem;
 }
-
+.notFound {
+    margin-top: 2rem;
+    text-align: center;
+    display: none;
+}
+.notFound h1 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
